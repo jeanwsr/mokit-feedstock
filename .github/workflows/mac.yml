@@ -20,6 +20,8 @@ jobs:
           architecture: arm64
       - name: Build the package
         run: |
+          conda info
+          conda activate mokit-env
           wget "https://gitlab.com/jxzou/mokit/-/raw/master/pyproject.toml"
           rattler-build build recipe --output-dir output -c conda-forge
       - name: Upload artifact
